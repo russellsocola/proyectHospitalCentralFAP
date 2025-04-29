@@ -4,12 +4,12 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-usuario',
+  selector: 'app-crear-cuenta',
   imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
-  templateUrl: './usuario.component.html',
-  styleUrl: './usuario.component.css'
+  templateUrl: './crear-cuenta.component.html',
+  styleUrl: './crear-cuenta.component.css'
 })
-export class UsuarioComponent {
+export class CrearCuentaComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router

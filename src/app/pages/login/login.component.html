@@ -1,14 +1,14 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top" id="mainNav" style="background-color: rgba(52,58,64,0.75);">
-    <div class="container"><a class="navbar-brand" routerLink="./inicio" style="color: rgb(255,165,85);">FAP</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive"
+    <div class="container"><a class="navbar-brand" routerLink="/login" style="color: rgb(255,165,85);">FAP</a><button class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarResponsive" type="button" data-toogle="collapse" aria-controls="navbarResponsive"
             aria-expanded="false" aria-label="Toggle navigation" style="background-color: rgb(255,165,85);"><i class="fa fa-bars" style="color: rgba(255,255,255,0.75);"></i></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="nav navbar-nav ml-auto text-uppercase">
-                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" routerLink="./inicio" style="color: rgb(255,165,85);">Inicio de Sesión</a></li>
+                <li class="nav-item" role="presentation"><a class="nav-link js-scroll-trigger" routerLink="/login" style="color: rgb(255,165,85);">Inicio de Sesión</a></li>
                 
             </ul>
         </div>
     </div>
-  </nav>
+</nav>
 
 <section id="portfolio">
     <div class="container" style="margin-top: 50px;">
@@ -23,7 +23,7 @@
                     <div class="col-md-7" style="padding: 10px;border-radius: 4px;box-shadow: 1px 1px 2px 1px;height: auto;">
                         <p class="text-center" style="font-weight: bold;">INGRESO AL SISTEMA (SIGNO)</p>
 
-                            <form [formGroup]="inicioForm">                            
+                            <form [formGroup]="loginForm">                            
                                 <div class="form-group">
                                     <div class="input-group mb-1">
                                         <span class="input-group-text" style="width: 35%;">Tipo de documento: </span>
@@ -66,8 +66,8 @@
                             
                         
                         <div class="row text-center">
-                                <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/crear-nueva-cuenta">Crear nueva cuenta</a></div>
-                                <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/olvide-password">He olvidado la contraseña</a></div>
+                                <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/crear-cuenta">Crear nueva cuenta</a></div>
+                                <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/recuperar-password">He olvidado la contraseña</a></div>
                         </div>
                 </div>
                 </div>
