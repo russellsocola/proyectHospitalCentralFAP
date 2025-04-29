@@ -1,12 +1,19 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-reprogramar-cita',
-  imports: [RouterLink],
+  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
   templateUrl: './reprogramar-cita.component.html',
   styleUrl: './reprogramar-cita.component.css'
 })
 export class ReprogramarCitaComponent {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router
+  ){}
 
+  
 }
