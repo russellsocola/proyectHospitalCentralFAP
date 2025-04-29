@@ -6,7 +6,6 @@ import { RecuperarPasswordComponent } from './pages/login/recuperar-password/rec
 import { ReservarMedicoComponent } from './pages/principal/gestionar-cita/reservar-medico/reservar-medico.component';
 import { SeleccionarEspecialidadComponent } from './pages/principal/gestionar-cita/seleccionar-especialidad/seleccionar-especialidad.component';
 import { ResumenCitaComponent } from './pages/principal/gestionar-cita/resumen-cita/resumen-cita.component';
-import { ConfirmarCitaComponent } from './pages/principal/gestionar-cita/confirmar-cita/confirmar-cita.component';
 import { CancelarCitaComponent } from './pages/principal/gestionar-cita/cancelar-cita/cancelar-cita.component';
 import { ConfirmarCancelacionComponent } from './pages/principal/gestionar-cita/confirmar-cancelacion/confirmar-cancelacion.component';
 import { MensajeCancelacionComponent } from './pages/principal/gestionar-cita/mensaje-cancelacion/mensaje-cancelacion.component';
@@ -15,6 +14,7 @@ import { GestionarCitaComponent } from './pages/principal/gestionar-cita/gestion
 import { HistorialClinicoComponent } from './pages/principal/historial-clinico/historial-clinico.component';
 import { UsuarioComponent } from './pages/principal/usuario/usuario.component';
 import { ReservarLaboratorioComponent } from './pages/principal/gestionar-cita/reservar-laboratorio/reservar-laboratorio.component';
+import { MensajeConfirmacionCitaComponent } from './pages/principal/gestionar-cita/mensaje-confirmacion-cita/mensaje-confirmacion-cita.component';
 
 export const routes: Routes = [
     {path:"", redirectTo: "login", pathMatch: "full"}, // Ruta por defecto
@@ -28,7 +28,7 @@ export const routes: Routes = [
         {path: "seleccionar-especialidad", component: SeleccionarEspecialidadComponent},
         {path: "reservar-laboratorio", component: ReservarLaboratorioComponent},
         {path: "resumen-cita",  component: ResumenCitaComponent},
-        {path: "confirmar-cita", component: ConfirmarCitaComponent},
+        {path: "mensaje-confirmacion-cita", component: MensajeConfirmacionCitaComponent},
         {path: "cancelar-cita",component: CancelarCitaComponent},
         {path: "confirmar-cancelacion", component: ConfirmarCancelacionComponent},
         {path: "mensaje-cancelacion", component: MensajeCancelacionComponent},
