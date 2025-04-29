@@ -14,6 +14,7 @@ import { ReprogramarCitaComponent } from './pages/principal/gestionar-cita/repro
 import { GestionarCitaComponent } from './pages/principal/gestionar-cita/gestionar-cita.component';
 import { HistorialClinicoComponent } from './pages/principal/historial-clinico/historial-clinico.component';
 import { UsuarioComponent } from './pages/principal/usuario/usuario.component';
+import { ReservarLaboratorioComponent } from './pages/principal/gestionar-cita/reservar-laboratorio/reservar-laboratorio.component';
 
 export const routes: Routes = [
     {path:"", redirectTo: "login", pathMatch: "full"}, // Ruta por defecto
@@ -25,6 +26,7 @@ export const routes: Routes = [
     {path: "gestionar-cita", component: GestionarCitaComponent},
         {path: "reservar-medico", component: ReservarMedicoComponent},
         {path: "seleccionar-especialidad", component: SeleccionarEspecialidadComponent},
+        {path: "reservar-laboratorio", component: ReservarLaboratorioComponent},
         {path: "resumen-cita",  component: ResumenCitaComponent},
         {path: "confirmar-cita", component: ConfirmarCitaComponent},
         {path: "cancelar-cita",component: CancelarCitaComponent},
