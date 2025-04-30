@@ -18,7 +18,8 @@ export class LoginComponent {
   loginForm = this.fb.group({
     tipoDoc: ["", [Validators.required]],
     nroDoc: ["", [Validators.required]],
-    pwd: ["", [Validators.required]]
+    pwd: ["", [Validators.required]],
+    captcha:[""]
   })
 
   submit(){
