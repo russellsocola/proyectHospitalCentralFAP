@@ -51,7 +51,8 @@ create table cita_medica(
     id_cita int PRIMARY KEY IDENTITY(1,1),
     id_paciente int,
     id_medico int,
-    fecha_hora date,
+    fecha date,
+    hora varchar(10),
     estado varchar(20),
     motivo_consulta varchar(200),
     CONSTRAINT fkCitaPac FOREIGN KEY (id_paciente) REFERENCES paciente(id_paciente),
@@ -79,6 +80,16 @@ create table reprogramacion(
     motivo_reprogramacion varchar(200),
     CONSTRAINT fkRepCitaOri FOREIGN KEY (id_cita_original) REFERENCES cita_medica(id_cita),
     CONSTRAINT fkRepCitaNue FOREIGN KEY (id_cita_nueva) REFERENCES cita_medica(id_cita)
+)
+go
+
+create table medico_disponibilidad(
+    id_disponibilidad int PRIMARY KEY IDENTITY(1,1),
+    id_medico int,
+    fecha date,
+    hora varchar(10),
+    activo bit,
+    CONSTRAINT fkDisMed FOREIGN KEY (id_medico) REFERENCES medico(id_medico)
 )
 go
 
