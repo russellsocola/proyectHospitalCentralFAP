@@ -53,7 +53,7 @@ create table cita_medica(
     id_medico int,
     fecha date,
     hora varchar(10),
-    estado varchar(20),
+    estado varchar(20), /* RESERVADO, CONFIRMADO, CANCELADO, PRESENTE, AUSENTE */
     motivo_consulta varchar(200),
     CONSTRAINT fkCitaPac FOREIGN KEY (id_paciente) REFERENCES paciente(id_paciente),
     CONSTRAINT fkCitaMed FOREIGN KEY (id_medico) REFERENCES medico(id_medico)
@@ -64,9 +64,9 @@ create table notificacion(
     id_notificacion int PRIMARY KEY IDENTITY(1,1),
     id_cita int,
     fecha_envio datetime,
-    tipo varchar(10),
-    motivo varchar(20),
-    estado_envio varchar(20),
+    tipo varchar(10), /* SMS, CORREO */
+    motivo varchar(20), /* CITA, REPROGRAMACION */
+    estado_envio varchar(20), /* PENDIENTE, ENVIADO, FALLIDO */
     mensaje varchar(200),
     CONSTRAINT fkNotCita FOREIGN KEY (id_cita) REFERENCES cita_medica(id_cita)
 )
