@@ -9,23 +9,24 @@ go
 
 create table paciente(
     id_paciente int PRIMARY KEY IDENTITY(1,1),
-    dni varchar(8),
+    tipo_documento varchar(10), /* DNI, CE, PASS */
+    numero_documento varchar(20),
     nombre varchar(100),
     apellido varchar(100),
     correo varchar(100),
     telefono varchar(20),
     direccion varchar(200),
     fecha_nacimiento date,
-    genero char(1)
+    genero char(1) /* F, M */
 )
 go
 
 create table usuario(
     id_usuario int PRIMARY KEY IDENTITY(1,1),
     id_paciente int,
-    usuario varchar(50),
     clave_hash varchar(200),
     fecha_ultimo_acceso datetime,
+    activo bit,
     CONSTRAINT fkUsuPac FOREIGN KEY (id_paciente) REFERENCES paciente(id_paciente)
 )
 go

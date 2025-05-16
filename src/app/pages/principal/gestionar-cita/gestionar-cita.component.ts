@@ -1,11 +1,10 @@
-import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-gestionar-cita',
-  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule],
   templateUrl: './gestionar-cita.component.html',
   styleUrl: './gestionar-cita.component.css'
 })

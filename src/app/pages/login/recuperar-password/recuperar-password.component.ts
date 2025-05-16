@@ -5,7 +5,7 @@ import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-recuperar-password',
-  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule],
   templateUrl: './recuperar-password.component.html',
   styleUrl: './recuperar-password.component.css'
 })

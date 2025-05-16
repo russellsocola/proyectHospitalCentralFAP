@@ -6,7 +6,7 @@ import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-resumen-cita',
-  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule],
   templateUrl: './resumen-cita.component.html',
   styleUrl: './resumen-cita.component.css'
 })

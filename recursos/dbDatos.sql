@@ -6,17 +6,17 @@ DELETE FROM paciente;
 
 -- Tabla: paciente
 SET IDENTITY_INSERT paciente ON;
-INSERT INTO paciente (id_paciente, dni, nombre, apellido, correo, telefono, direccion, fecha_nacimiento, genero) VALUES
-(1, '45678901', 'Ana', 'Torres', 'ana.torres@gmail.com', '987654321', 'Av. Perú 123', '1990-06-15', 'F'),
-(2, '12345678', 'Juan', 'Pérez', 'juan.perez@hotmail.com', '923456789', 'Jr. Los Pinos 450', '1985-11-22', 'M');
+INSERT INTO paciente (id_paciente, tipo_documento, numero_documento, nombre, apellido, correo, telefono, direccion, fecha_nacimiento, genero) VALUES
+(1, 'DNI', '45678901', 'Ana', 'Torres', 'ana.torres@gmail.com', '987654321', 'Av. Perú 123', '1990-06-15', 'F'),
+(2, 'DNI', '12345678', 'Juan', 'Pérez', 'juan.perez@hotmail.com', '923456789', 'Jr. Los Pinos 450', '1985-11-22', 'M');
 SET IDENTITY_INSERT paciente OFF;
 GO
 
 -- Tabla: usuario
 SET IDENTITY_INSERT usuario ON;
-INSERT INTO usuario (id_usuario, id_paciente, usuario, clave_hash, fecha_ultimo_acceso) VALUES
-(1, 1, 'ana.torres', 'hash123ana', '2025-05-13'),
-(2, 2, 'juan.perez', 'hash456juan', '2025-05-14');
+INSERT INTO usuario (id_usuario, id_paciente, clave_hash, fecha_ultimo_acceso, activo) VALUES
+(1, 1, 'hash123ana', '2025-05-13',1),
+(2, 2, 'hash456juan', '2025-05-14',1);
 SET IDENTITY_INSERT usuario OFF;
 GO
 
@@ -64,3 +64,27 @@ INSERT INTO notificacion (id_notificacion, id_cita, fecha_envio, tipo, motivo, e
 (2, 2, '2025-05-16', 'SMS', 'CITA', 'PENDIENTE', 'Su cita está pendiente de confirmación');
 SET IDENTITY_INSERT notificacion OFF;
 GO
+
+select * from paciente;
+go
+
+select * from usuario;
+go
+
+select * from especialidad_medica;
+go
+
+select * from medico;
+go
+
+select * from cita_medica;
+go
+
+select * from notificacion;
+go
+
+select * from reprogramacion;
+go
+
+select * from medico_disponibilidad;
+go

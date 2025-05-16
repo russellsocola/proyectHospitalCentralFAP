@@ -6,7 +6,7 @@ import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-seleccionar-especialidad',
-  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule],
   templateUrl: './seleccionar-especialidad.component.html',
   styleUrl: './seleccionar-especialidad.component.css'
 })

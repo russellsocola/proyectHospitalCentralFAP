@@ -6,7 +6,7 @@ import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mensaje-confirmacion-cita',
-  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule],
   templateUrl: './mensaje-confirmacion-cita.component.html',
   styleUrl: './mensaje-confirmacion-cita.component.css'
 })

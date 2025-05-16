@@ -28,12 +28,12 @@
                                     <div class="input-group mb-1">
                                         <span class="input-group-text" style="width: 35%;">Tipo de documento: </span>
                                         <div class="form-floating" style="width: 65%;">
-                                            <select class="form-control form-select" formControlName="tipoDoc">
-                                                <option value="1">DNI</option>
-                                                <option value="2">Carnet Extranjería</option>
-                                                <option value="3">Pasaporte</option>
+                                            <select class="form-control form-select" formControlName="tipo_documento">
+                                                <option value="DNI">DNI</option>
+                                                <option value="CE">Carnet Extranjería</option>
+                                                <option value="PASS">Pasaporte</option>
                                             </select>
-                                            <small class="form-text text-danger" *ngIf="getTipoDocInvalido">*El tipo de documento es requerido</small>
+                                            <small class="form-text text-danger" *ngIf="TipoDocInvalido">*El tipo de documento es requerido</small>
                                         </div>
                                     </div>
                                 </div>
@@ -42,8 +42,8 @@
                                     <div class="input-group mb-1">
                                         <span class="input-group-text" style="width: 35%;">Número de documento: </span>
                                         <div class="form-floating" style="width: 65%;">
-                                            <input class="form-control" type="text" formControlName="nroDoc" autocomplete="off" >
-                                            <small class="form-text text-danger" *ngIf="getNroDocInvalido">*El número de documento es requerido</small>                                            
+                                            <input class="form-control" type="text" formControlName="numero_documento" autocomplete="off" >
+                                            <small class="form-text text-danger" *ngIf="NroDocInvalido">*El número de documento es requerido</small>                                            
                                         </div>
                                     </div>
                                 </div>
@@ -52,15 +52,15 @@
                                     <div class="input-group mb-1">
                                         <span class="input-group-text" style="width: 35%;">Contraseña: </span>
                                         <div class="form-floating" style="width: 65%;">
-                                            <input class="form-control" type="password" formControlName="pwd">
-                                            <small class="form-text text-danger" *ngIf="getPwdInvalido">*La contraseña es requerido</small>
+                                            <input class="form-control" type="password" formControlName="clave_hash">
+                                            <small class="form-text text-danger" *ngIf="PwdInvalido">*La contraseña es requerido</small>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="form-group text-center">
+                                <!-- <div class="form-group text-center">
                                     <input class="form-control col-md-5 offset-md-4 text-center" type="text" formControlName="captcha" autocomplete="off" placeholder="CAPTCHA" >
-                                </div>
+                                </div> -->
 
                                 <div class="form-group text-center">
                                     <button (click)="submit()" class="btn btn-primary" type="submit" style="width: 30%;">Ingresar</button>
@@ -70,8 +70,8 @@
                             
                         
                         <div class="row text-center">
-                                <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/crear-cuenta">Crear nueva cuenta</a></div>
-                                <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/recuperar-password">He olvidado la contraseña</a></div>
+                                <!-- <div class="col-md-6"><a class="nav-link js-scroll-trigger" routerLink="/crear-cuenta">Crear nueva cuenta</a></div> -->
+                                <div class="col-md-12"><a class="nav-link js-scroll-trigger" routerLink="/recuperar-password">He olvidado la contraseña</a></div>
                         </div>
                 </div>
                 </div>

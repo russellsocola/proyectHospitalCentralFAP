@@ -5,7 +5,7 @@ import { RouterLink, RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-crear-cuenta',
-  imports: [ReactiveFormsModule, NgIf, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule],
   templateUrl: './crear-cuenta.component.html',
   styleUrl: './crear-cuenta.component.css'
 })

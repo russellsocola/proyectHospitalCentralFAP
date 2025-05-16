@@ -1,6 +1,36 @@
 use DBFAP
 go
 
+/*
+    verificados en producción - 16/05/2025 02:32
+*/
+create procedure usp_usuario_login
+(
+    @tipo_documento varchar(10),
+    @numero_documento varchar(20),
+    @clave_hash varchar(200)
+)
+as
+    SELECT u.id_usuario, p.id_paciente, p.nombre, p.apellido
+	FROM usuario u
+	INNER JOIN paciente p on u.activo = 1 and p.id_paciente = u.id_paciente
+		and p.tipo_documento = @tipo_documento and p.numero_documento = @numero_documento and u.clave_hash = @clave_hash
+GO
+/*
+exec usp_usuario_login 'DNI', '45678901', 'hash123ana';
+
+SELECT *
+FROM usuario u
+INNER JOIN paciente p on u.activo = 1 and p.id_paciente = u.id_paciente
+    and p.tipo_documento = 'DNI' and p.numero_documento = '45678901' and u.clave_hash = 'hash123ana'
+*/
+
+
+
+/*
+    Faltan verificar
+*/
+
 create procedure usp_ListarMedicos
 as
 	SELECT 	P.id_medico,
