@@ -14,4 +14,8 @@ export class ProjectService {
     return this.http.post("https://yerwug2msl.execute-api.us-east-1.amazonaws.com/v1fap/login", data, {responseType: "json"})
   }
 
+  listar_medicos(){
+    return this.http.get("https://yerwug2msl.execute-api.us-east-1.amazonaws.com/v1fap/medicos",{responseType: "json"})
+  }
+
 }

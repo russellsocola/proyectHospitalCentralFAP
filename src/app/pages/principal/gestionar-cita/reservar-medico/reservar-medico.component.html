@@ -16,7 +16,7 @@
     <div class="container" style="margin-top: 50px;">
         <div class="row text-center" style="margin-bottom: -15px;">
             <div style="width: 100%; ">
-                <form [formGroup]="gestionarCitaForm">
+                <form [formGroup]="reservaMedicoForm">
                     
                     <!-- opciones de progreso -->
                     <div class="row">
@@ -31,7 +31,7 @@
                         <div class="col-md-12" style="font-weight: bold;"> &lt; Reservar por médico  </div> <br /><br />
                         <div class="col-md-6 col offset-md-3">
                             <div class="input-group mb-3">
-                                <input type="text" class="form-control" placeholder="Ingrese nombre del médico">
+                                <input type="text" class="form-control" formControlName="txtMedico" placeholder="Ingrese nombre del médico">
                                 <div class="input-group-append">
                                   <span class="input-group-text" id="basic-addon2"> <a routerLink="/reservar-medico"> Buscar </a></span>
                                 </div>
@@ -42,27 +42,14 @@
                     <br />
 
                     <!-- Seleccion médicos disponibles -->
-                    <div class="row">
+                    <div class="row text-center">
                         <div class="col-md-12" style="font-weight: bold;">Médicos disponibles</div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <input type="radio" class="btn-check" formControlName="selMedico" name="yy" id="optCitaPresencial" autocomplete="off">
-                                    <label class="btn" for="optCitaPresencial"> Apellidos y nombres del Médico 1 </label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="radio" class="btn-check" formControlName="selMedico" name="yy" id="optCitaPresencial" autocomplete="off">
-                                    <label class="btn" for="optCitaPresencial"> Apellidos y nombres del Médico 2 </label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="radio" class="btn-check" formControlName="selMedico" name="yy" id="optCitaPresencial" autocomplete="off">
-                                    <label class="btn" for="optCitaPresencial"> Apellidos y nombres del Médico 3 </label>
-                                </div>
-                                <div class="col-md-12">
-                                    <input type="radio" class="btn-check" formControlName="selMedico" name="yy" id="optCitaPresencial" autocomplete="off">
-                                    <label class="btn" for="optCitaPresencial"> Apellidos y nombres del Médico 4 </label>
-                                </div>
-                            </div>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-4 offset-md-4">
+                            <select class="form-control form-select" formControlName="tipo_documento">
+                                <option *ngFor="let p of medicos" value="{{ p.id_medico }}">{{ p.nombre }} {{ p.apellido }} </option>
+                            </select>
                         </div>
                     </div>
                     <br />

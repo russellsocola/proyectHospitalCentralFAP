@@ -1,52 +1,53 @@
-import { NgIf } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink, RouterModule, Router } from '@angular/router';
+import { ProjectService } from '../../../../services/project.service';
 
 @Component({
   selector: 'app-reservar-medico',
-  imports: [ReactiveFormsModule, RouterLink, RouterModule],
+  imports: [ReactiveFormsModule, RouterLink, RouterModule, NgFor],
   templateUrl: './reservar-medico.component.html',
   styleUrl: './reservar-medico.component.css'
 })
 export class ReservarMedicoComponent {
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private readonly ps: ProjectService
   ){}
 
-  gestionarCitaForm = this.fb.group({
-    tipoDoc: ["", [Validators.required]],
-    nroDoc: ["", [Validators.required]],
-    pwd: ["", [Validators.required]]
+  reservaMedicoForm = this.fb.group({
+    txtMedico: [""],
+    selMedico: [""]
   })
   
  
   btnAtraz(){
-    if(this.gestionarCitaForm.valid)
-      console.log(this.gestionarCitaForm.value)
+    if(this.reservaMedicoForm.valid)
+      console.log(this.reservaMedicoForm.value)
     else
       this.router.navigate(['/gestionar-cita']);
   }
 
   btnContinuar(){
-    if(this.gestionarCitaForm.valid)
-      console.log(this.gestionarCitaForm.value)
+    if(this.reservaMedicoForm.valid)
+      console.log(this.reservaMedicoForm.value)
     else
       this.router.navigate(['/seleccionar-especialidad']);
   }
-/*
-  getTipoDocInvalido(){
-    return this.gestionarCitaForm.get("tipoDoc")?.invalid && this.gestionarCitaForm.get("tipoDoc")?.touched
+
+  medicos: any = []
+
+  __listar_medicos(){
+    this.ps.listar_medicos().subscribe((rest: any) => {
+      this.medicos = rest.data
+      console.log(this.medicos)
+    })
   }
 
-  getNroDocInvalido(){
-    return this.gestionarCitaForm.get("nroDoc")?.invalid && this.gestionarCitaForm.get("nroDoc")?.touched
+  ngOnInit(): void {
+    this.__listar_medicos()
   }
-
-  getPwdInvalido(){
-    return this.gestionarCitaForm.get("pwd")?.invalid && this.gestionarCitaForm.get("pwd")?.touched
-  }
- */
 
 }

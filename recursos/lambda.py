@@ -44,3 +44,40 @@ def lambda_handler(event,context):
   "numero_documento": "45678901",
   "clave_hash": "hash123ana"
 }
+
+
+""" =============== """
+""" fap_medicos_get """
+""" =============== """
+
+import json
+import pyodbc 
+
+def lambda_handler(event,context):
+    conn = pyodbc.connect("Driver={ODBC Driver 18 for SQL Server};"
+                      "Server=upc-dbweb.cyphf9v7gxq3.us-east-1.rds.amazonaws.com;"
+                      "Database=DBFAP;"
+                      "UID=admin;"
+                      "PWD=$Jacc.78;")
+    
+    cursor = conn.cursor()
+    try:        
+        cursor.execute('exec usp_ListarMedicos')
+        
+        data = []
+
+        for row in cursor:
+            data.append({"id_medico":row[0], "id_especialidad": row[1],"especialidad":row[2],"nombre":row[3], "apellido":row[4] })
+
+        return {
+            'data': data
+        }
+    except:
+        return {
+            'error': 'Error al obtener los datos'
+        }
+
+    finally:
+        cursor.close()
+        conn.close()
+

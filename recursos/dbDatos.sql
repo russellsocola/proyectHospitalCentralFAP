@@ -50,10 +50,10 @@ GO
 
 -- Tabla: cita_medica
 SET IDENTITY_INSERT cita_medica ON;
-INSERT INTO cita_medica (id_cita, id_paciente, id_medico, fecha, hora, estado, motivo_consulta) VALUES
-(1, 1, 1, '2025-05-16', '09:00', 'CONFIRMADO', 'Dolor de estómago'),
-(2, 2, 2, '2025-05-17', '08:30', 'RESERVADO', 'Control de presión arterial'),
-(3, 1, 1, '2025-05-18', '10:00', 'RESERVADO', 'Reprogramación');
+INSERT INTO cita_medica (id_cita, id_paciente, id_medico, tipo, fecha, hora, estado, motivo_consulta) VALUES
+(1, 1, 1, 'PRESENCIAL', '2025-05-16', '09:00', 'CONFIRMADO', 'Dolor de estómago'),
+(2, 2, 2, 'VIRTUAL', '2025-05-17', '08:30', 'RESERVADO', 'Control de presión arterial'),
+(3, 1, 1, 'PRESENCIAL', '2025-05-18', '10:00', 'RESERVADO', 'Reprogramación');
 SET IDENTITY_INSERT cita_medica OFF;
 GO
 

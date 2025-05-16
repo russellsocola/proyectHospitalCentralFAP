@@ -52,6 +52,7 @@ create table cita_medica(
     id_cita int PRIMARY KEY IDENTITY(1,1),
     id_paciente int,
     id_medico int,
+    tipo varchar(10), /* PRESENCIAL, VIRTUAL */
     fecha date,
     hora varchar(10),
     estado varchar(20), /* RESERVADO, CONFIRMADO, CANCELADO, PRESENTE, AUSENTE */

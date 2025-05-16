@@ -25,21 +25,25 @@ INNER JOIN paciente p on u.activo = 1 and p.id_paciente = u.id_paciente
     and p.tipo_documento = 'DNI' and p.numero_documento = '45678901' and u.clave_hash = 'hash123ana'
 */
 
+create procedure usp_ListarMedicos
+as
+	SELECT m.id_medico, e.id_especialidad, e.nombre 'especialidad', m.nombre, m.apellido
+	FROM medico m
+	INNER JOIN especialidad_medica e on e.id_especialidad = m.id_especialidad
+go
+/*
+exec usp_ListarMedicos
+*/
+
+
+
+
+
 
 
 /*
     Faltan verificar
 */
-
-create procedure usp_ListarMedicos
-as
-	SELECT 	P.id_medico,
-			P.id_especialidad,
-			P.nombre,
-			P.apellido,
-			P.telefono_contacto
-	FROM medico p
-go
 
 create procedure usp_ListarMedicos_x_Especilidad
 (
